@@ -32,7 +32,9 @@
 <div class="notice">Privacy: records are stored in this browser using localStorage. They remain after refresh, but are not automatically shared with other devices or users. Export a CSV backup regularly.</div>
 </main><div class="modal-backdrop" id="backupReminder" role="dialog" aria-modal="true" aria-labelledby="reminderTitle"><div class="reminder"><h2 id="reminderTitle">Weekly CSV backup</h2><p>Your monthly mess records are saved in this browser. Export a CSV copy now so you have a backup.</p><div class="actions"><button class="btn primary" id="reminderExport">Export CSV</button><button class="btn secondary" id="reminderLater">Remind me later</button></div></div></div><div class="toast" id="toast"></div>
 <script>
-const KEY='messculater.months.v1';\nconst REMINDER_KEY='messculater.csvReminderAt.v1';\nconst WEEK_MS=7*24*60*60*1000;
+const KEY='messculater.months.v1';
+const REMINDER_KEY='messculater.csvReminderAt.v1';
+const WEEK_MS=7*24*60*60*1000;
 const $=id=>document.getElementById(id);
 const money=n=>'₹'+Number(n||0).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2});
 const monthLabel=s=>{const [y,m]=s.split('-').map(Number);return new Date(y,m-1,1).toLocaleDateString('en-IN',{month:'long',year:'numeric'})};
